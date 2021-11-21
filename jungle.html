@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jungle</title>
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link rel="shortcut icon" href="images/Favicon.ico" type="images/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
+   <script>
+        function initComparisons() {
+          var x, i;
+         
+          x = document.getElementsByClassName("img-comp-overlay");
+          for (i = 0; i < x.length; i++) {
+           
+            compareImages(x[i]);
+          }
+          function compareImages(img) {
+            var slider, img, clicked = 0, w, h;
+          
+            w = img.offsetWidth;
+            h = img.offsetHeight;
+            
+            img.style.width = (w / 2) + "px";
+           
+            slider = document.createElement("DIV");
+            slider.setAttribute("class", "img-comp-slider");
+            
+            img.parentElement.insertBefore(slider, img);
+            
+            slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+            slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+           
+            slider.addEventListener("mousedown", slideReady);
+           
+            window.addEventListener("mouseup", slideFinish);
+           
+            slider.addEventListener("touchstart", slideReady);
+          
+            window.addEventListener("touchend", slideFinish);
+            function slideReady(e) {
+             
+              e.preventDefault();
+             
+              clicked = 1;
+             
+              window.addEventListener("mousemove", slideMove);
+              window.addEventListener("touchmove", slideMove);
+            }
+            function slideFinish() {
+             
+              clicked = 0;
+            }
+            function slideMove(e) {
+              var pos;
+              
+              if (clicked == 0) return false;
+              
+              pos = getCursorPos(e)
+              if (pos < 0) pos = 0;
+              if (pos > w) pos = w;
+             
+              slide(pos);
+            }
+            function getCursorPos(e) {
+              var a, x = 0;
+              e = e || window.event;
+              
+              a = img.getBoundingClientRect();
+              
+              x = e.pageX - a.left;
+          
+              x = x - window.pageXOffset;
+              return x;
+            }
+            function slide(x) {
+             
+              img.style.width = x + "px";
+              
+              slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+            }
+          }
+        }
+        </script>
+</head>
+<body>
+    <button onclick="topFunction()" id="myBtn" title = "Go to top">
+        <i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+      
+    <header>
+        <div class="mode">
+            <span class="change"><i class="fa fa-adjust" aria-hidden="true"></i></span>
+        </div>
+        <script>
+      $( ".change" ).on("click", function() {
+    if( $( "body" ).hasClass( "dark" )) {
+      $( "body" ).removeClass( "dark" );
+
+    } else {
+      $( "body" ).addClass( "dark" );
+    }
+});
+    </script>
+        <img src="images/unnamed.png" alt="mobilelegends Logo" class = "gg">
+        <h2 class="game">Mobile Legends: Bang Bang</h2>
+        <h5>Moonton</h5>
+        <p class="trouble">Category:<br>Action Games, Fun Games, Multiplayer Games</p>
+    </header>
+
+        <nav>
+        <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="character.html">Heros</a></li>
+        <li><a href="Guide.html"> Guide</a></li>
+        <li><a href="jungle.html">Jungle Role</a></li>
+        <li><a href="Battle_Field.html">Battle Field Guide</a></li>
+        <li><a href="Battle-spell.html">Battle Spell</a></li>
+    </ul></nav>
+    
+    <div class="main">
+        
+        <h2 class="title6">Jungle</h2>
+            <img src="images/maxresdefault_(2).jpg" alt="maxresdefault" class = "main_pic">
+    <p class="tet">The Jungle refers to any area of the map that is not a lane or part of either team's base, including the rival that divides it. Jungles rely on killing neutral mobs in the jungle to keep up with their laning teammates in terms of gold and experience.</p>
+    <p class="tet">Jungles are in between the three lanes. These areas weave their way into the map so you can cut through to lanes without having to go back and around map areas.</p>
+    <p class="tet">Jungle creeps are mirrored on both sides, and both teams can access the same number of camps on their side of the map. As mentioned, the extent to which a team has map control fluctuates depending on the objectives they secure. </p>
+    <p class="tet">Jungles have monsters scattered in those areas and give you a faster way of gaining gold and exp for your hero. You can spend the waiting period for enemy minions to kill one of the jungle monsters. Just take note that more powerful monsters are spawned as the match goes on. They do, however, give you better and more powerful bonuses. If you're lucky, you may ever get a bonus specific for your hero's health, damage and ever defense. </p>
+    <p class="tet">In a standard 5-on-5 game of Mobile Legends, 4 players on a team will be Laners, and 1 player will be a designated Jungler. Jungle Creeps exclusively showcase in Imperial Sanctuary Map. Jungle creeps are very strong in early game. The team shares the jungle from the top and bottom areas. Some heroes are very fasst at clearing jungles, especially Assassin and Marksman due to having taking the retribution battle spell and giving them buff in order to have brust damage.</p>
+    <p class="tet">Take note that specific characters are better suited for jungle areas than others and even have gear builds specific for jungling so be sure that your character is well-suited for the area before charging in for the monster kill. </p>
+    <p class="tet">The purpose of the jungle is to gain the buffs  such as Gold, Healing, and Blue Buff, etc. The monsters are scattered throughout the jungle area in order for you to kill in return for those loots and rewards. At the beginning of the match, the monsters and the Cyclone Eye are spawned at different periods. There are decent heroes that are better for jungling than other heroes with the help of jungling gear build or just jungling item. Creeps and Battlefield Field features are constituent of the Jungle. Creeps are classified into 3: Common, Elite, and Legend. Common Creeps give a medium buff such as Healing Buff, and Gold Buff. Elite Creeps give a role buff that increases the heroes' attributes and has a special innate. Legend Creeps have big HP bar, and then always spawn in the river.</p>
+    <h4>Monster Respawns and Buffs</h4>
+    <p class="tet">There are different types of monsters in Mobile Legends. Each of these monsters gives different amounts of gold, experience, and unique in-game buffs. It is vital for you to know the basics and advancements about these jungle monsters if you want to be a successful Jungler.</p>
+    <h3>Creeps</h3>
+    <h4>Common Creeps</h4>
+    <p class="tet">There are numerous small monsters or creeps, scattered throughout the jungle. These are really easy to kill and do not give out any buffs and are naturally, good for gold and experience only. These monsters spawn after 1 minute and you can clear these camps often, to obtain more gold and experience. If you are killing these monsters, when the enemy push is farther away from your tower, you will get a bonus experience and gold.</p>
+  <div class ="table">
+      <div class="title">
+          <p>
+              Common creeps
+          </p>
+      </div>
+      <div class="body"> 
+      <div class="Row">
+          <div class="cell1">
+            <img src="images/Lithowanderer.jpg" alt="Lithowanderer" style="width:100%;">
+          </div>
+          <div class="cell1">
+            <img src="images/Rockursa.jpg" alt="Rockursa" style="width:100%;">
+              </div>
+              <div class="cell1">
+                <img src="images/images_(3).jpg" alt="crab" style="width:100%;">
+              </div>
+          </div>
+     
+          <div class="Row">           
+            <div class="cell">
+                <h3>Lithowanderer</h3>
+                <p>The Lithowanderer is considered only as a common creep because it won't attack you but movess only at the designated path. It can be found in the bush near the river in each half of the middle lane. It will appear in first 35 s.  When it was killed, it will become a Walkie Grass and follow the killer for 120s. The Walkie Grass helps the allied target within the 6-unit range to restore 2% HP and Mana every second. To minions, restore 3% per second. It is very helpful for team fights.</p><h4>Story</h4><p>Due to the divine power of the King of Light in the Imperial Sanctuary, it seems that everything could have souls. Around the riverway, there lives a mysterious and mild creature, named Lithowanderer. However, because the Walkie Grass that is living on its back has a magic power of healing, the Lithowanderer is often brought into the battlefields of war.</p>
+          </div>
+          <div class="cell">
+            <h3>Rockursa</h3>
+          <p>Rockursa will appear within 30s after the match starts. The ability of the Rockursa is that it can launch an attack every 1s, dealing (+100% Total Physical Attack) Physical Damage. Rockursa is like a brave bear with wooden spiky vambrace. He has a vase of honey with knives beside him.
+              <br>
+              Rockursa doesn't give any buff, aside from little and a Healing Buff.
+              This is also essential to clear from time to time. Players that usually clear jungle camp once the push is still far away from his tower generate more gold than a player that stays on his lane.
+          </p>
+        </div>
+        <div class="cell">
+            <h3>Crab</h3>
+              <p>There are 2 different types of crabs in early game. In first 45 s, it will show only little crab and will refresh within 15s. The normal size of crab will appear after 90s later and needs to refresh for 120 s.</p><p>
+              Crab gives you a Gold Buff which will provide an extra gold every second in a limited time. Little Crab will appear first and then the crab. The developers added the Crab in previous versions in order to give players more impetus to compete for jungle control, as well as to reward teamwork. Due to the crab's position being far away from where players usually fight, he soon became largely ignored. In the new map they have given the crab a new life, he will now be more closely situated to the top and bottom lanes, they hope this will break up the monotony of the top and bottom laning phases, allowing players use the crab to snowball or chase a lead.</p>
+           
+        </div>
+      </div>
+    </div>
+
+    </div>
+    <div class="table">
+        <div class="body">
+            <div class="Row">
+                <div class="cell2">
+                    <div class="img-comp-container">
+                        <div class="img-comp-img">
+                            <img src="images/Crammer.jpg" alt="Crammer" width="400" height="200">
+                          </div>
+                          <div class="img-comp-img img-comp-overlay">
+                            <img src="images/Photo_2019-07-11_13-29-48.jpg" alt="Crammer" width="400" height="200">
+                          </div>
+                    </div>
+                </div>
+                <div class="cell2">
+                    <div class="img-comp-container">
+                        <div class="img-comp-img">
+                            <img src="images/Scaled_Lizard.jpg" alt="Scaled_Lizard" width="400" height="200">
+                          </div>
+                          <div class="img-comp-img img-comp-overlay">
+                            <img src="images/Crimson_Lizard.jpg" alt="Crimson_Lizard" width="400" height="200">
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Row">
+                <div class="cell">
+                    <h3>Crammer</h3>
+          <p>Crammer will appear within 40s. It is a kind of insert that has sharp and deadly fangs, a crimson exoskeleton, and neon green eye. Its ability is that it can launches an attack every 1s, dealing (+100% Total Physical attack) Physical Damage. When Crammer is killed, its carcass will turn into a Little Crammer that is weaker than the Crammer, that can survive, survive up to 15s. It doesn't give any buff, aside from little gold and a Healing Buff. Of course, this is also essential to clear from time to time. Players that usually clear jungle camp once the push is still far away from his tower generate more gold than a player that stays on his lane.</p><h4>Story</h4><p> In the Imperial Sanctuary, the Crammer is considered as the lowest class of creatures. Though in their thought, they have sharp and deadly fangs, in the warrior's view, the Crammer is just a kind of insect and their fangs are just the basic materials for making some tools.</p>
+                </div>
+                <div class="cell">
+                    <h3>Scaled Lizard</h3>
+          <p>Scaled Lizard will also appear within 40s. It will refresh in 70s after starting the match. Scaled Lizard has a curly tail and purple head crest. His tongue is used as a weapon.  It donesn't give any buff, aside from little gold and a Healing Buff. Of course, this is also essential to clear from time to time. Players that usually clear jungle camp once the push is still far away from his tower generate more gold than a player that stays on his lane. He uses his tongue as a weapon to damage his enemy.</p><h4>Story</h4><p>It is said that when the Imperial Sanctuary was initially found, there were a lot of creatures living on this land. They looked completely different and possess the most powerful abilities. They were scattered one was the Scaled Lizard. They lived among the bushes and specialized in ganking enemies, making them the most frequent creature warriors to come across.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4>Elite Creeps</h4>
+ <p>Elite jungle creeps are a step up from common creatures and hand out the best buffs in the game, often referred to as “blue buff” and “red buff,” or “purple buff” and “orange buff.” These monsters spawn after 30 seconds of the game and 2 minutes after they are slain. On most circumstances, these creeps can be killed, by a solo player. These monsters grant the killer with exceptional in-game buffs, that are classified into red and blue ones and have their own specialties.</p>
+
+ <div class="table">
+     <div class="title">
+         <p>
+             Elite Creeps
+         </p>
+     </div>
+     <div class="body">
+        <div class="Row">
+            <div class="cell12">
+                <img src="images/Fiend.jpg" alt="Fiend" style="width:100%;">
+            </div>
+            <div class="cell12">
+                <img src="images/Serpent.jpg" alt="Serpent" style="width:100%;">
+            </div>
+        </div>
+         <div class="Row">
+             <div class="cell">
+                <h3>Fiend</h3>
+                <p>It is also a jungle buff monster. It will show up after 30 seconds. It is located on the right side of the map alomst on the bottom lane near the second turret. After killing, it gives medium money than the duo monsters (Serpent) but it will also give a Red Buff. In the next 120s, each time the killer attacks the enemy Heroes, the Soul of Lava will attack them once, dealing extra damage and slowing them for 1s based on the killer's Role TO Assassin / Fighter / Tank, deals 50 (+50% Total Physical ATK) True Damage and slows the targets by 80%. To Marksman / Mage / Support, deals 50 (+50% Total Physical ATK) True Damage and slows the target by 30%. The attack has a CD of 3s.</p><h4>Tips </h4><p>Fiend is also known as Reaper(Western Expanse) and has a spawn time of 45 seconds and a further cooldown of 2 minutes. Fiend is comparatively, easy to kill, unlike the turtle and you must kill the Fiend, as soon as you see one. By killing a Fiend, you not only obtain gold and experience but you also get a buff that boosts your physical and magical damage by 10%. So, it is advised, you should never miss the opportunity to score some gold, experience, and buffs, from the Fiend.</p>
+                   <h4>Story</h4><p>There are a lot of creatures in the Imperial Sanctuary. Fiend, being the most aggressive creatures among them, has been resting beside the Temple of Heroes. Its powerful strength is its way of protecting itself. Moreover, the most appalling thing about it is that it possesses the power of genetic mutation so that it could adjust its strength according to the ability of its components. It is said that the warriors could regain the gene of its strength after defeating it.</p>
+             </div>
+             <div class="cell">
+                <h3>Serpent</h3>
+                <p>Serpent are the duo monsters in the jungle, these duo jungle monster will give more gold than the smaller monsters and will give a Blue Buff. They will appear within 30 seconds in the early game. They are located in the left side of the jungle area.In the next 120s, reduces all skill's CD by 10%, Mana Cost by 40%, Energy Cost by 25%. When killing an enemy unit, restores HP based on the type of this unit. If the unit is a minion, restores 3%. If the unit is a Hero, restores 8%. If the unit is a Creep, restores 12%.</p><h4>Story</h4><p>In the Imperial Sanctuary, any creature could be a lethal threat. Take Serpent, the most mysterious and sneaky one, as an example - for a long time, Serpents have been the challengers' favorite. Roaming beside the river, Serpents love to attack the intrudes who break into their territory. They often go in an overwhelming quantity, thus, making with challengers struggle. Anyone who has the courage and strength to beat a Serpent will be rewarded with endless strength, which can be obtained from its blood.</p><h4>Tips</h4>
+                <p>
+                    Serpent is also known as Spinner Chaser(Western Expanse) and Statued Shocker(Celestial Palace) and has a spawn time of 45 seconds, with a further cooldown of 2 minutes. Also, it is relatively easy to kill, unlike the Turtle. However, you must slay the smaller one first, as it's faster in attack speed but low on HP. Killing this duo will give you buffs. These buffs consist of 20% cooldown reduction, 50% reduced mana consumption from your skills, and a plus 20% energy consumption bonus. These buffs are really good for heroes, who need to spam their skills.
+                </p>
+             </div>
+         </div>
+     </div>
+ </div>
+ <h4>Legend Creeps</h4>
+ <p>Legendary jungle monsters can be best described as utility. They are comparatively, more difficult to kill. However, they grant the entire team with gold and EXP boosts, along with other useful grants.</p>
+ <div class="table">
+ <div class="Row">
+    <div class="column">
+      <div class="content1">
+        <img src="images/Cryoturtle.jpg" alt="Cryoturtle" style="width:81.5%;">
+        <h3>Cryoturtle</h3>
+        <p>The Cryoturtle spawns within 3 minutes in the game time. It will reward all teammates with gold and EXP. It gives Turtle Buff to the last hitter after killing it. Its basic attack is ranged only and it shoots the sparkling ball and it deals short damage. Spawn location and countdown for Turtle are displayed 120 seconds before it spawns.</p>
+        <h4>Story</h4>
+        <p>Cryoturtles are the slowest energy creatures of the Imperial Sanctuary. As it's recorded in the Warrior's Scripts, Cryoturtles are covered with numerous priceless treasures, including gold and crystals. The most amazing thing about it is that it has signed a mystic contract with the Lord of the Temple of Heroes. The warriors believed that the Cryoturtles overlook the Temple of Heroes from the other side of the lake, which meant they were interlinked in some way. To be specific, they believed that Cryoturtles are the critical keys to awaken the Lord of the Temple.</p>
+       <h3>Tips</h3>
+       <p>Turtle gives you a decent amount of gold and experience and it is recommended to take it down, early on in the game, as everyone is much dependent on items at the start. As mentioned above, you and your team can earn a bunch of gold and EXP from the turtle. However, never attempt to take on the Turtle, alone. It is not that easy, and you should always work as a team or if you even see a teammate fighting a Turtle, you should always help them out and secure the kill. Turtle has a respawning time of 3 minutes and you should never miss a chance, to slay the Turtle.</p>
+      </div>
+    </div>
+    <div class="column">
+      <div class="content1">
+      <img src="images/Sanctuary_Lord.jpg" alt="Sanctuary_Lord" style="width:75%;padding-top: 10px;">
+      <h3>Sanctuary Lord</h3>
+      <p>Sanctuary Lord spawns within 9 minutes of the game starting. He will reward the player with a good amount of Gold and EXP, not only the players but also for the minions. Once defeated, Lord will respawn and fight alongside the team that defeated him. Spawn location and countdown for Lord are displayed 120 seconds before he spawns. Lord spawns every 4 minutes in a random location after he is killed for the first time. He has more attack skills than The Turtle, with his basic attack using his cudgel to hit the enemies, and it includes a bit of AoE where the direct impact isn't imminent.</p>
+      <h4>History</h4>
+      <p>His old appearance is similar to Tigreal's Dark Guardian skin but with a dark helmet on. With its new appearance, lord now has a more giant lava-theme devil and what seems to be steel or iron armor, lava horns on its head, and yellow eyes. it's shown wearing armor and its chest has flowing lava on it. Lord does not seem to have armor on the lower parts of his arms. His current ppearance is very similar to Hylos' model, Centaur.</p>
+      <h4>Story</h4>
+     <p>Legend has it that there is a mysterious creature hidden in the ancient Imperial Sanctuary, symbolizing power, victory, and destruction. The Lord of the Temple of Heroes, possesses the supreme power to endow everything on the battlefield with strength and make himself literally immortal. No one can be compared to him and even the bravest of fighters could only seek shelter from him, for a fairly short period. For a long time, the Lord of the Temple of Heroes posted here. Once awaken, he would be the most steadfast defense within the Imperial Sanctuary<p>
+    
+      </div>
+    </div>
+ </div>
+</div>
+
+ <h3 style = "margin:20px; padding-top: 20px;">Buffs</h3>
+ <p>I will explain about the icons that you will see after you killed creeps.</p>
+
+ <div class="table" >
+    <div class="tit1">
+        <p>Healing Buff</p>
+    </div>
+    <div class="Row1">
+        <div class="cell5">
+            <p>Icon</p>
+        </div>
+        <div class="cell6">
+            <p>Description</p>
+        </div>
+        <div class="cell7">
+            <p>Source</p>
+        </div>
+    </div>
+    <div class="Row">
+        <div class="cell5">
+            <a target="_blank" href="images/Healing_Buff.png">
+            <img src="images/Healing_Buff.png" alt="healing buff" class = "thumbnail" style="width:50px">
+           </a>
+        </div>
+        <div class="cell6">
+            <p>The monster indicated by green dot in mini-map. The one who last hit it will recover a great amount of HP plus some gold and experience to all the nearby allies. They have low HP and low damage. They respawn within 1  min after die.Restores 5% Mana and 350 HP in 2 seconds.</p>
+        </div>
+        <div class="cell7">
+            <ul>
+                <li>Scaled Lizard</li>
+                <li>Crammer</li>
+                <li>Rockursa</li>
+                <li>Little Serpent</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+ <div class="table1">
+    <div class="tit2">
+        <p>Walkie Grass</p>
+    </div>
+    <div class="Row2">
+        <div class="cell5">
+            <p>Icon</p>
+        </div>
+        <div class="cell6">
+            <p>Description</p>
+        </div>
+        <div class="cell7">
+            <p>Source</p>
+        </div>
+    </div>
+    <div class="Row">
+        <div class="cell5">
+            <a target="_blank" href="images/Regeneration_Effect.png">
+            <img src="images/Regeneration_Effect.png" alt="Regeneration_Effect" class = "thumbnail" style="width:50px">
+           </a>
+        </div>
+        <div class="cell6">
+            <p>Helps the allied target within the 6-unit range to restore Max HP and Max Mana, up to 1% per second to Heroes and 3% per second to minions. The Walkie Grass will follow the killer.</p>
+        </div>
+        <div class="cell7">
+            <ul>
+                <li>Lithowanderer</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="table1">
+    <div class="tit3">
+        <p>Gold Buff</p>
+    </div>
+    <div class="Row3">
+        <div class="cell5">
+            <p>Icon</p>
+        </div>
+        <div class="cell6">
+            <p>Description</p>
+        </div>
+        <div class="cell7">
+            <p>Source</p>
+        </div>
+    </div>
+    <div class="Row">
+        <div class="cell5">
+            <a target="_blank" href="images/Gold_Buff.png">
+            <img src="images/Gold_Buff.png" alt="gold Buff" class = "thumbnail" style="width:50px">
+           </a>
+        </div>
+        <div class="cell6">
+            <p>The killer gains a Gold Buff that will last of 30 seconds and provide 100 extra Gold. On Little Crab, the killer will gain 30 extra Gold in 9 seconds.</p>
+        </div>
+        <div class="cell7">
+            <ul>
+                <li>Crab</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="table1">
+    <div class="tit4">
+        <p>Red Buff</p>
+    </div>
+    <div class="Row4">
+        <div class="cell5">
+            <p>Icon</p>
+        </div>
+        <div class="cell6">
+            <p>Description</p>
+        </div>
+        <div class="cell7">
+            <p>Source</p>
+        </div>
+    </div>
+    <div class="Row">
+        <div class="cell5">
+            <a target="_blank" href="images/Red_Buff.png">
+            <img src="images/Red_Buff.png" alt="red Buff" class = "thumbnail" style="width:50px">
+           </a>
+        </div>
+        <div class="cell6">
+            <p>Aka Orange Buff. Each time the killer attacks the enemy Heroes, the Soul of Lava will attack them once, dealing extra damage and slowing them for 1 second based on the killer's Role. The attack has a CD of 3 seconds.</p>
+            <div class="table">
+                <div class="tit4">
+                    <p>Role Basic</p>
+                </div>
+                <div class="body">
+                    <div class="Row">
+                    <div class="cell7">
+                        <ul>
+                            <li>Assassin</li>
+                            <li>Fighter</li>
+                            <li>Tank</li>
+                        </ul>
+                    </div>
+                    <div class="cell7">
+                        <p>It deals 50 (+20% Total Physical Attack) (+30 × Attack Speed) True Damage and slows the target by 60%.</p>
+                    </div>
+                </div>
+                <div class="Row">
+                    <div class="cell7">
+                        <ul>
+                            <li>Marksman</li>
+                            <li>Mage</li>
+                            <li>Support</li>
+                        </ul>
+                    </div>
+                    <div class="cell7">
+                        <p>It deals 50 (+30% Total Physical Attack) (+50 × Attack Speed) True Damage and slows the target by 20%.</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell7">
+            <ul>
+                <li>Fiend</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="table1">
+    <div class="tit5">
+        <p>Blue Buff</p>
+    </div>
+    <div class="Row5">
+        <div class="cell5">
+            <p>Icon</p>
+        </div>
+        <div class="cell6">
+            <p>Description</p>
+        </div>
+        <div class="cell7">
+            <p>Source</p>
+        </div>
+    </div>
+    <div class="Row">
+        <div class="cell5">
+            <a target="_blank" href="images/Purple_Buff.png">
+            <img src="images/Purple_Buff.png" alt="purple Buff" class = "thumbnail" style="width:50px">
+           </a>
+        </div>
+        <div class="cell">
+            <p>Aka Purple Buff. Reduces all skill's CD by 10%, Mana Cost by 40%, Energy Cost by 25%. When killing an enemy unit, restores HP based on the type of this unit:</p>
+            <div class="table" style="width:100%">
+                <div class="tit5">
+                    <p>Unit Type</p>
+                </div>
+                <div class="body">
+                    <div class="Row">
+                    <div class="cell7">
+                        <ul>
+                            <li>Minion</li>
+                            <li>Hero</li>
+                            <li>Creep</li>
+                        </ul>
+                    </div>
+                    <div class="cell7">
+                        <ul>
+                            <li>3%</li>
+                            <li>8%</li>
+                            <li>12%</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="cell">
+            <ul>
+                <li>Serpents</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<div class="table1">
+    <div class="tit6">
+        <p>Turtle Buff</p>
+    </div>
+    <div class="Row6">
+        <div class="cell5">
+            <p>Icon</p>
+        </div>
+        <div class="cell6">
+            <p>Description</p>
+        </div>
+        <div class="cell7">
+            <p>Source</p>
+        </div>
+    </div>
+    <div class="Row">
+        <div class="cell5">
+            <a target="_blank" href="images/Turtle_Buff.png">
+            <img src="images/Turtle_Buff.png" alt="Turtle" class = "thumbnail" >
+           </a>
+        </div>
+        <div class="cell6">
+            <p>The killer gains a shield that can absorb 400 (+40 each Hero Level) Damage when the killer doesn't take any damage in 5 seconds. The shield can increase the killer's Physical Attack by 20 (+2 each Hero Level), Magic Power by 25 (+4 each Hero Level).</p>
+        </div>
+        <div class="cell7">
+            <ul>
+          <li>Cryoturtle</li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<div class="table1">
+    <div class="tit6">
+        <p>Sanctuary Lord</p>
+    </div>
+    <div class="Row6">
+        <div class="cell5">
+            <p>Icon</p>
+        </div>
+        <div class="cell6">
+            <p>Description</p>
+        </div>
+        <div class="cell7">
+            <p>Source</p>
+        </div>
+    </div>
+    <div class="Row">
+        <div class="cell5">
+            <a target="_blank" href="images/lord.png">
+            <img src="images/lord.png" alt="lord" class = "thumbnail1" style="padding-bottom: 10px;">
+           </a>
+        </div>
+        <div class="cell6">
+            <p>Lord is the most powerful of all monsters any your team must tackle it, only in the late game. It is recommended that the Lord must be slain when your team is powerful enough, otherwise, Lord will kill almost every one of your team member, due to its sheer strength. When your team finally manages to slay Lord, it will give you additional experience points and also add gold. Additionally, it will also start to fight, for your side. However, the Lord becomes weak if faced with multiple minions and enemy heroes, so you must clear a path and push it towards the opposition turrets. Never attempt to slay the Lord, alone, especially right when it spawns after 9 minutes, in-match time, because not only will it be suicide, but also, the turrets will most-likely kill it, before it can deal massive amounts of damage. Instead, make sure at least 2 turrets are gone on either lane before you summon Lord to fight alongside your team. Additionally, every time the Lord spawns, it is more powerful than before. So it is wise, to protect it from enemies, as your team tries to slay it. Otherwise, wait for the enemy to tackle it and then move in for the last hit, and secure the kill. Once the Lord is slain, there is a 4-minute cooldown, before it spawns again.</p>
+        </div>
+        <div class="cell7">
+            <ul>
+          <li>Sanctuary Lord</li>
+        </ul>
+        </div>
+    </div>
+</div>
+
+<h3 style="text-align: left;">Summary</h3>
+<p>Jungling is a reference to when you leave the lane, stay in the jungle to level up and help your teammates by doing occasional surprise attacks, during group fights. The basic idea here is that your team will be relying on you for game ganking. You should always be on the move, clearing jungle camps after camp and looking for opportunities to gank. Constantly check the minimap and try to camp at the lane nearest to the current objective to secure it more easily.</p>
+</div>
+<div class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <img src="images/24c76ddb7010451e5bd3680ef43529b8.png" alt="Moonton logo" style="width: 50%; height :140px; display: block; margin: 0 auto">
+           <h4>SHANGHAI MOONTON TECHNOLOGY CO., LTD</h4>
+            <p>Active and healthy gaming mentality is the beginning of healthy gaming. Please control your gaming time reasonably, avoid indulging in gaming and affecting your life, pay attention to self-protection, and prevent network traps</p>
+            <div class="contact">
+                <span><i class="fas fa-phone"></i>&nbsp; +1 866-800-1275</span>
+                <span><i class="fas fa-envelope"></i>&nbsp; mobilelegendsgame@gmail.com</span>
+
+            </div>
+        </div>
+        <div class="footer-section links">
+            <h2 class="social">Join the social community</h2>
+            <div class="socials">
+                <a href="https://www.facebook.com/pg/mobilelegendsgame/" title ="facebook" target="_blank"  style="color : white;"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/mobilelegendsgame" title="Instagram" target="_blank" style="color : white"><i class="fab fa-instagram"></i></a>
+                <a href="https://twitter.com/mobilelegendsol" title="twitter" target="_blank" style="color : white"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.youtube.com/c/MobileLegends5v5MOBA" title="YouTube" target="_blank" style="color : white"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-section location">
+            <h2>Shanghai headquarters</h2>
+            <p><b>Address</b>: 11th Floor, Hongmao Center, No. 2138 Wanyuan Road, Minhang District, Shanghai </p>
+            <iframe class="google_map" src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2569.9697544673286!2d121.39290161432838!3d31.143912681495774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1s%20Hongmao%20Center%2C%20No.%202138%20Wanyuan%20Road%2C%20Minhang%20District%2C%20Shanghai!5e1!3m2!1sen!2smy!4v1602591429109!5m2!1sen!2smy"  style="border: 0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+           
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <i> Copyright &copy; 2020 Games.lol. All Rights Reserved.</i>
+      </div>
+</div>
+ <script>
+    initComparisons();
+    </script>
+    
+    <script>
+        var mybutton = document.getElementById("myBtn");
+        window.onscroll = function(){
+            scrollFunction();
+        }
+        function scrollFunction() {
+            if(document.body.scrollTop >20|| document.documentElement.scrollTop >20){
+                mybutton.style.display="block";
+            } else {
+                mybutton.style.display="none";
+            }
+        }
+        function topFunction(){
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+</body>
+
+</html>
